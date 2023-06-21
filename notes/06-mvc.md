@@ -242,3 +242,117 @@
 
           manual trigger listener = appstate.emit(event)
           appState.emit('myGachamons')
+
+
+
+  <!-- SECTION STEP by STEP -->
+
+    1. Router - change html on home page in view
+    2. R - Set up new router path
+      - path
+      - controller
+      - view start small - h1 on page
+    3. Create new controller -cars controller
+    4. Index - create another link in navbar
+    5. Index - stub what we want cars page to look like
+    6. Index - stub out car template
+    7. CarView - Abstract car view out to keep router clean
+        export const CarView = ` STUBBED HTML `
+        import car view into router
+        change view in router to CarView
+        injects car temp when car button clicked
+    8. Models - create car model
+        constructor(data){
+          this.make = data.make
+          this.ect = data.ect
+        }
+
+        Generate ID => utility class
+          this.id = generateID()
+    9. CarModel - get card template
+        move html into get
+    10. Appstate make car
+    11. Cars - Date()
+        this.listingdate = new Date()
+    12. CarCont - log cars in colsole
+    13. Car Cont - create private draw function
+    14. id in carview - carListings
+    15. set html in CC
+    16. call draw function in CarsC class
+    17. model - string interpolate
+    18. Owned By GMa
+        computeGrandmaBanner
+    19. Create Form
+        - paste collapse in carview
+        - create form inside of collapse in carview
+        - 
+    20. Inline style
+    21. write form in html
+        - name on input matching objects in array so it will format a new object in array with those properties
+        - look at the input types and forms
+    22. move form to CarsView
+    23. onsubmit event => createCar
+    24. CC write create car function 
+          ! pass event through // prevent default so page wont reload
+          test small - log if form submits
+
+          const form = event.target
+          const carData = getFormData(form)  ==== utility class
+
+          carData.ownedByGrandma = carData.ownedByGrandma == 'on' ? true : false   a one line if statement => 
+            if carData.ownedByGrandma is 'on' return true, otherwise return false
+    25. store data in appstate => carService
+    26. create carService
+    27. CC call create car and pass car data through to service
+    28. Write method in CS
+        turn car data into new car model
+          createCar(carData)
+            const newCar = new Car(data)
+            appstate.cars.push(newCar)
+            appstate.emit('cars')
+    29. Listener in CC
+        appstate.on()
+    30. Cs save cars function - utility -- call on push
+    31. appstate load cars
+    32. delete items
+          cm -create button on eash that deletes
+          pass id through
+          write function in CC - pass param down
+          pass id to service
+    33. Service deleteCar()
+          findIndex()
+          splice()
+          savecars()
+          emit()
+  
+
+
+
+  <!-- SECTION NOTES WEDNESDAY -->
+    router is an array of objects
+    provide path\controllers\view
+    a href = link tag in html
+    only loads contollers that router has called after load
+    if view is nothing it won't overwrite last page
+
+    date class
+        Date()
+
+        if no arguement will give you current date from system internal clock
+        can pass arguments to get specific date
+
+        since Date is a class it has methods we can use it
+        toLocaleString() => format date to standard
+
+        add required attribute to forms to have that check before submit
+        required on checkbox means must be checked
+
+        || default => see cars model for use
+
+        Splice
+          can add or remove objects from an array
+          splice(start, delete count)
+
+<!-- REVIEW  -->
+  input types in html
+
