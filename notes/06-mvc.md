@@ -406,3 +406,11 @@
     get can create new firmat for stored data
 
 
+
+<!-- SECTION THURSDAY FIRESIDE NOTES -->
+    
+    form input name = property on object
+
+    async - await pop.confirm  reference fireside gregslist
+
+    
