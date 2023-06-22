@@ -356,3 +356,53 @@
 <!-- REVIEW  -->
   input types in html
 
+
+
+<!-- SECTION THURSDAY LECTURE -->
+    1. started with model - case.js
+    2. get listTemplate so we can get a page draw - case.js
+    3. create data to work with - appstate
+        new case
+    4. set date and unlock automatically
+        new Date turnary
+        unlocked turnary
+        || or statement 'no report'
+    5. draw data - create controller
+    6. create cases service
+      singleton => dont export service
+    7.draw case list
+    8. create place in appstate to store active case = null
+    9. set up active case from case controller to appstate
+    10. draw active case
+    11. create get Redacted Template in case
+    12. case.js - create logic for locking/unlocking
+    13. create bad words array in appstate
+    14. split array into words in case model
+    15. map function => creates copies of array with results of function
+        let arr = this.report.split(' ') {
+        let mapped = arr.map(word => {
+          if(_badWords.includes(word.toLowerCase())) {
+            return '⬛'
+          }
+          return word
+        })
+        return mapped.join(' ') ==> splitting and joining on the space
+        }
+    16. create form - html
+
+
+    ... => spread object = takes objects out of original array and puts them in new array with added objects = similar to push but triggers emit
+
+    text area CC - on blur  - when someone leaves text area
+
+      create interval functions in controller 
+
+    in draw temp += cases.length
+
+    or
+
+    id in router, set text to id in draw
+
+    get can create new firmat for stored data
+
+
