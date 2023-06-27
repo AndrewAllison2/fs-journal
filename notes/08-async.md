@@ -106,7 +106,35 @@
   - listener in cars controller for the account property to draw button on loggin/reload
   - button d-none class
   - function to take class off of button
-    
+  - create editCar button
+  - get edit form => copy html form into model
+  - swap form to one stored on car model
+  - id in html
+  - public draw function drawEditForm(carId)
+  - add vaules and string interpolate on EditForm
+  - get EditForm - app.carcontroller.editCar(event) * pass 2 arguements through* => will pass through each to service
+  - edit car from the car controller - async
+  - prevent default, find car with id, send to service with new method, pass car method
+  - editCar in service
+  - put updates in index
+  - findIndex/splice
+  - add emitter to draw changes
+
+  - store form from html somewhere so we can get it back
+  - drawCarForm function in CC
+  - listener - this.drawCarForm
+  - draw form on page load
+  - scroll to and create instance in carscontroller => cool stuff
+  
+
+  boostrap.element.getorcreateinstance(#class).show
+
+  in model - static get createForm()
+      put html form template
+
+      in draw cars - Car.CreateForm - only exists on the definition of the car class
+
+    static method - have access to it without instanciating the class
 
   
   <!-- SECTION Post -->
@@ -144,6 +172,16 @@ function _showFormButton(){
   }
 }
 
+<!-- SECTION UPDATE -->
+async editCar(carData){
+  const res = await api.put(`api/cars/${string interpolate}`, carData)
+  
+  const updatedCar = new Car(res.data)
+
+  splice with check
+}
+
+supply an id and an object
 
 
 <!-- NOTE -->
