@@ -250,7 +250,38 @@ supply an id and an object
     - find object in  appstate with spell id
     - set to active in appstate
     - sbC draw myactivespell()
-    - 
+    
+
+    <!-- SECTION AFTER LUNCH -->
+
+    - add checkbox in model for prepare prop
+    - onchange toggle function
+    -sbc create toggle function and pass id to service
+    - togglespellprep in sb service
+
+      -find in appstate => is it true or false
+      - put in sbServ - break reference w new object
+
+      find index so we can splice that spell at the same index
+
+        -findIndex
+        -post(url, {})
+        -splice
+
+    string interp and turnary to assign conditional 'checked' attribute to checkbox in model
+
+    draw spells set up with filter to change spell count => see sbCont draw function
+
+    - checkbox
+      can add checked to set default to checked
+      add onchange to fire off function just like button/selectable
+
+      pass id since id only exists on sandbox api
+
+      toggle spell preparation
+      
+
+
 
 <!-- NOTE NOTES -->
   create another instance of axios instead of changing existing one
