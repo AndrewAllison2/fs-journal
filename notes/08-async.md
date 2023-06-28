@@ -192,3 +192,77 @@ supply an id and an object
   .map only exists on an array class
 
   findIndex can return negative numbers, running splice will delete wrong things
+
+
+
+<!-- SECTION WEDSNESDAY LECTURE -->
+
+ <!-- NOTE STEP BT STEP -->
+
+    - env.js fill out
+    - create another instance of axios to point towards dnd api
+    - create spells controller and load
+    - get spells function in controller and pass to service
+    - get spells function in serivce
+        - append url in get
+        - log res
+    - call this.getSpells() in controller classs
+    - create spells array in appstate
+    - store data in appstate
+    - create draw function in controller
+    - create html template
+    - listener to draw spells so it only updates when the appstate changes
+    - string interpolate spell.name in li tags => have name property on pojos
+    - add onclick to li w/ function to pass index to service => spell.index
+    - get spell details(param)
+    - pass to service
+    - spelldetails in service
+    - build class model
+        - this.description = data came back as an array, will need to format it to string to store in our api
+        - turnary expression for damage type because data.damage doesnt exist and will return undefined
+    - create active spell in appstate = null because it is an object
+    - store active spell in appstate
+    - conroller draw active spell - logged to console, did not build template yet
+    - listener to draw when active changes in appstate
+    - stub out active template
+    - get DetailsTemplate()
+    - add button onto temp to save to sandbox api
+    - create snadboxspells controller
+    - onclick createspell() in model
+    - sandbox service
+    - create spell uses base url api
+    - post(url, body)
+    - in model use join to convert array of strings into a string => data.desc.join('/n)
+    - create another page to display our spells
+    - create view pages and set up paths in router
+    - getmyspells() in sb controller and pass to service
+    - getmyspells in service
+    - listener to get spells when appstate is loaded
+    - my spells array in appstate
+    - map results => store my spells as spell models in appstate
+    - or on data.desc - different prop names so join wont work w sandbox api
+    - multiline turnary for damage in model
+    - get myspells temp in model
+    - sbC draw my spells w listener to update
+    - old way get documentbyid in drawmyspells as check to see if that id exists and only set html if it does
+    - store id on model so we can target it
+    - set active spell function
+    - find object in  appstate with spell id
+    - set to active in appstate
+    - sbC draw myactivespell()
+    - 
+
+<!-- NOTE NOTES -->
+  create another instance of axios instead of changing existing one
+
+
+store pojos in appstate
+  can change import to an array of objects for intel
+
+  class role
+
+  overflow-y: auto puts scroll bar on our list => css
+
+  typeof method
+
+  operator
