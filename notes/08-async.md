@@ -366,4 +366,8 @@ store pojos in appstate
 
     map response into appstate
 
-    
+<!-- REVIEW DELETE REQUEST -->
+
+  button function pass id through
+  delete() - where and what 
+  find index and splice from appstate
