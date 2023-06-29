@@ -297,3 +297,73 @@ store pojos in appstate
   typeof method
 
   operator
+
+
+
+<!-- SECTION THURSDAY LECTURE -->
+
+    params object with api key in env
+      params: {api_key: 'api key'}
+
+    will get error if api requires key and do not have one
+      - can set in axios so it auto formats the key for every request we make
+      - can query api from service
+
+    ? key value pairs to query apis
+
+    create controller and get object in console
+    create model using that object
+    set up place to store in appstate
+
+
+<!-- REVIEW SET RANDOM PIC AS PAGE BACKGROUND -->
+    const picture = appstate.picture
+
+    const htmlBody = document.body
+
+    htmlBody.style.backgroundImage = `url($picture.imgUrl)`
+
+    then style w css
+
+    psudo class hover in css in dark-card
+      transition on the class always
+
+    on-hover util class => hides everything inside, hover on parent elem brings anything w on-hover prop into view
+
+<!-- SECTION QUERY -->
+
+    create form w button to submit
+    in draw in controller we need to caputre form data
+    put name on the form input field in index.html
+
+
+    getter in service we will string interpolate form data
+      -form data is an object so we have to drill into it to pull out the search
+        ${formData.search}
+        %20 is url character for space => axios will auto format this
+
+
+    target="_blank" => opens link in new tab
+
+<!-- SECTION SAVE PICTURES TO SANDBOX API -->
+
+    button on html in model
+    create controller/service to deal with sandbox api
+    write createPicture method through both
+    in service make post request to store picture on api
+
+
+    Update Model
+      added:
+      - id - sandbox id
+      - turnary on date
+      - added or where needed on properties
+
+<!-- SECTION REQUEST SAVED PICTURES FROM SANDBOX API -->
+
+    sandbox controller - get saved pictures
+    appstate.on('account', getMyPictures)
+
+    map response into appstate
+
+    
