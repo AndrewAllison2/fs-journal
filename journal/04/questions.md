@@ -1,11 +1,11 @@
 # Understanding Asynchronous Code, and API's
 01. What is the difference between `asynchronous` code and `synchronous` code?
 
-  > | ANSWER HERE |
+  > Aysnchronous code happens in the background, and awaits responses before continuing to run. Used to interact with apis. 
 
 02. What is an event listener?
 
-  > | ANSWER HERE |
+  > An event listener can target something stored in the appstate and call a funtion when that value changes using on and emit.
 
 03. What does *REST* stand for, and in simple terms what does it mean??
 
@@ -21,15 +21,15 @@
 
 06. Name three processes used to make requests over `HTTP`?
 
-  > | ANSWER HERE |
+  > .get, .post .delete
 
 07. What does the `API` acronym stand for?
 
-  > | ANSWER HERE |
+  > Application Programming Interface
 
 08. What must you do in order to `await` a promise inside of a function?
 
-  > | ANSWER HERE |
+  > async
 
 09. What is the purpose of encapsulation in programming?
 
@@ -37,8 +37,8 @@
 
 10. What is `HTTP` response code for a successful request?
 
-  > | ANSWER HERE |
+  > 200
 
 11. What is a 400 error?
 
-  > | ANSWER HERE |
+  > Bad request
