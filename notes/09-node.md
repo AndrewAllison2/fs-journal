@@ -1,6 +1,8 @@
 # Node
 
 
+REQ, RES, NEXT
+
 <!-- REVIEW -->
   > ORM's and what's used when interacting w/ MongoDB
       mongoose
@@ -83,3 +85,69 @@
 <!-- REVIEW BREAKPOINTS AND DEBUG TOOL -->
       - click red dot on left of code to set breakpoint
       - breakpoints are debugged within vs code
+      - code pauses when hitting bp and options to run in dev tools in vs
+    
+
+
+  req.params => cat object had params on it that contain id
+
+
+    const catId = req.params.catId
+
+    const cat = await catsService.getCatById(catId) => send to service
+
+    use id and find method to fins the cat with that id
+      return found cat => return value from find function
+
+  <!-- NOTE NO FOUND CAT ERROR HANDLING -->
+
+    CS conditional statement
+      if(!foundCat){
+        throw new BadRequest
+      }
+
+  <!-- SECTION POST CATS -->
+
+    CC - .post() => under get requests
+
+    .post('', this.createCat)
+
+    createCat(req, res, next){
+      const catData = req.body
+    }
+
+    request stores data in body
+
+    use postman to see the post request is working
+
+    create cat in service
+    give it id and push it to array
+
+
+  <!-- SECTION POSTMAN -->
+
+      mocks built client and sends requests
+
+
+  <!-- SECTION DELETE CATS -->
+
+      .delete('/:id', deleteCat)
+
+      findIndex to find the cat by id we cant to delete
+      set up conditional for error handling
+      splice foundcat out of the array
+      dont need to return anything because we are just removing an object
+
+  <!-- SECTION PUT -->
+
+      put('/:catId', updateCat)
+
+      need info to update - req.body
+
+      pass 2 params through (catId, catData)
+
+      catToUpdate.name = catData.name => only allow changes to name, cant store any random info in database
+
+      use checks (or, if) to keep default from setting properties to null
+
+<!-- SECTION END OF MONDAY LECTURE NOTES -->
