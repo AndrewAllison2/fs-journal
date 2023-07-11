@@ -151,3 +151,66 @@ REQ, RES, NEXT
       use checks (or, if) to keep default from setting properties to null
 
 <!-- SECTION END OF MONDAY LECTURE NOTES -->
+
+
+
+<!-- SECTION TUESDAY LECTURE NOTES -->
+
+    Env.js
+      - set up database connection
+
+!!! DO NOT PUSH ENV TO GITHUB !!! => template set up for git to ignore this file 
+
+  <!-- NOTE FILL OUT ENV -->
+      - go to mongodb and get connection string in drivers, paste in .env
+      - replace password with your user password in the connection string, password must be url safe
+      - port defaults to 3000, dont need to fill it out
+      - get domain, client id from auth0 => app/app/myapp || audience => api tab => copy paste into .env
+      - go into env.js is client folder and fill out auth0 credentials
+      - add string before ? on connection string to create a new collection on mongodb
+      - backend should serve and connect with mongo db
+
+  <!-- NOTE MAKE SURE TO SPIN UP PROJECT FROM THE CORRECT FOLDER -->
+
+    Schema allows for validation checks on the backend
+
+  <!-- SECTION SCHEMA -->
+      car.js - export const CarSchema = new Schema{}
+
+        ALL SCHEMA MODELS WILL FOLLOW THIS FRAMEWORK BELOW
+
+      import mongoose
+      export const *datatype*Schema = new Schema{
+        property: {type: string/number/bool, required: true/false, max and min length}
+      }
+
+  <!-- NOTE ENUM MEANS IT HAS TO BE ONE OF THESE THINGS --> see engine type in cars.js
+          enum: ['', '', '']
+
+  IN VALUES.JS COPY TIMESTAMPS: TRUE AND PASTE IN MODEL => SEE CARS.JS
+
+  <!-- SECTION DB CONTEXT.JS -->
+      reference values and accounts
+
+      plural datatype = datatype.model('data name', dataschema)
+
+
+  <!-- SECTION CONTROLLER -->
+
+    export class TypeController extends Basecontroller{}
+
+  <!-- SECTION SERVICE -->
+
+      async getCars(){
+        const cars = dbContext.Cars.find()
+      }
+
+      find is a mongoose method and different than find in javascript
+
+  mongoose translates mongoDb binary script into javascript
+
+    mongoose create makes a new car object and stores it in the database -- do not need to push
+    mongoose - create, find
+
+
+STORE CREATOR ID ON SCHEMA AS REQUIRED TO AUTHENTICATE USERS AND ACTIONS
