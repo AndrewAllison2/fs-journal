@@ -209,8 +209,36 @@ REQ, RES, NEXT
 
   mongoose translates mongoDb binary script into javascript
 
+    dbDatabase.collection => mongoose method
+
     mongoose create makes a new car object and stores it in the database -- do not need to push
     mongoose - create, find
 
 
-STORE CREATOR ID ON SCHEMA AS REQUIRED TO AUTHENTICATE USERS AND ACTIONS
+  STORE CREATOR ID ON SCHEMA AS REQUIRED TO AUTHENTICATE USERS AND ACTIONS - see cars.js
+
+  <!-- SECTION MIDDLEWARE -->
+      controller
+        .use(Auth0Provider.getAuthorizedUserInfo)
+in
+        everything under this now requires you to be logged in
+
+    Postman - authorization/bearer token -> get and paste into postman to get authorization
+
+    in controller - carData.creatorId = req.userInfo.id
+
+    this will create and/or overwrite the id sent up when making requests => defensive coding
+
+
+  removeCar
+    - null check with get car by id => set up error handling in function
+    - .remove() will clear it out of the database
+
+    alias and get the user id in the controller, pass car id and user id to service
+
+<!-- REVIEW DELETE IN SERVICE AND CHECKS -->
+
+    after changing properties --- originalCar.save() => mongoose method, update properties, save to db, send to user
+
+
+<!-- NOTE IF CLONING DOWN GO TO CONSOLE, CD INTO GREGSLIST NODE SERVER, RUN NPM I -->
