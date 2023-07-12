@@ -252,4 +252,61 @@ DATA RELATIONSHIPS
 
     - Many to Many - 2 way street to find info stored in database by ids
 
-  
+  Starting with models or Schema in the server
+
+  toJSON : {virtuals: true} needed to use virtual ptoperties
+
+
+<!-- SECTION NEW MODEL -->
+    - page model
+
+    gnerally have new controller for each data type
+
+
+  ref property - add to schema to reference different collection in database
+      bookId: {type: , required: true, ref:'Book'}
+
+  write method getBookById in BooksController/Service
+      - write here because it deals with books
+      - will need the bookId to check which book the page belongs to
+
+  services can talk to eachother
+    - in pagesService await pagesService.getBookById(pageData.bookId)
+
+  making request in booksController
+  dealing with pages so pass to pages service
+    data type determines which service to use
+
+find takes in a filter object
+  provide key and value
+
+  .find({bookId: bookId})
+
+  <- bookId was the parameter we passed through the function ->
+
+<!-- SECTION MANY TO MANY RELATIONSHIP -->
+
+  set user id to the id that held token 
+  bookAuthorData.authorId = req.userInfo.id
+
+  <!-- SECTION VIRTUALS -->
+
+  local field: should refer to one of the models properties
+  foreign field: should match property on another collection
+
+  await virtuals in service
+      .populate - mongoose method, run virtuals on this schema
+
+      can supply what to return as second arguement => string seperated with spaces
+
+    looks through books collection, finds book with the supplied id, nests that object on the author object
+
+if we need a book id to find the author the books controller will make the request
+the authors service should look through the author db to find authors with supplied book id
+
+    accounts cont can get things for the user  profile gets things by the user
+
+    profiles/bookAuthors - getBooksByAuthorId
+
+
+
