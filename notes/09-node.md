@@ -242,3 +242,14 @@ in
 
 
 <!-- NOTE IF CLONING DOWN GO TO CONSOLE, CD INTO GREGSLIST NODE SERVER, RUN NPM I -->
+
+
+
+<!-- SECTION WEDNESDAY LECTURE DATA-->
+DATA RELATIONSHIPS
+
+    - 1 to Many - many pages point to 1 book, but 1 page will never point to 2 books
+
+    - Many to Many - 2 way street to find info stored in database by ids
+
+  
