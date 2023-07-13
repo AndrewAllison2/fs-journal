@@ -282,6 +282,8 @@ find takes in a filter object
 
   .find({bookId: bookId})
 
+  if variable name is the same for key and value, can pass it once and it will create key value pair for us
+
   <- bookId was the parameter we passed through the function ->
 
 <!-- SECTION MANY TO MANY RELATIONSHIP -->
@@ -344,3 +346,25 @@ FRONT END
 
     do not need request to find bird by id because we stored them in appstate
     find bird in appstate and set it to active => spot in appstate for active
+
+<!-- SECTION -->
+VIRTUALS/RELATIONSHIPS
+
+objectSchema.virtuals(''){
+  localField: exists on this schema
+  foreignField: unique property on collection we are pointing towards
+  justOne : bool
+  ref: what collection we are looking at
+}
+
+service -> .populate('reporter', 'what we want to return from our ref')
+
+BirdwatcherSchema.index({birdId: 1, watcherId: 1}, {unique: true}) === can only store 1 thing in db with that bird id and watcher id
+
+EX: this could be used for only liking a post once
+
+use birdId to find any watcher with that id stored on it => get will be in birds controller because we need the bird id, 
+will send it to watchers service => watchers service is the only thing that knows abt watchers in api
+--whatever data type we are fetching is the service we will pass to
+
+virtual - count: true
