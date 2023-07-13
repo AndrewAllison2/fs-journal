@@ -309,4 +309,38 @@ the authors service should look through the author db to find authors with suppl
     profiles/bookAuthors - getBooksByAuthorId
 
 
+<!-- SECTION -->
+HACKATHON LECTURE
 
+    set up env files
+    create model with uml data
+      - review enum:[]
+
+  let users add query to get birds
+    const query = req.query
+
+    pass query down to service
+    pass through find filter in service
+
+find request with empty object returns everything
+
+    can be added to generic get requests to add more functionality
+
+<!-- NOTE -->
+
+when you clone down project have to create server .env => fill out with same credentials
+
+open terminal and run npm i in server
+
+<!-- SECTION -->
+FRONT END
+
+    create and load controller
+    get some birds
+    create model with data we return
+    create place to store in appstate
+    map birds into appstate
+    create template and draw birds
+
+    do not need request to find bird by id because we stored them in appstate
+    find bird in appstate and set it to active => spot in appstate for active
