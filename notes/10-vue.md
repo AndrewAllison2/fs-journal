@@ -284,4 +284,40 @@ props are on the child element
   if property is null on page load, need an elvis operator(?) or v-if check to avoid breaking vue
 
   v-if is better because it checks for all props vs elvis required on each property
-  
+
+#### Search
+  set up new page -> add path in router
+  create search page.vue
+  add button on nav bar for search
+
+  v-model = sets up 2 way data binding between input field and script
+
+  input v-model="editable.query"
+
+  const editable = ref({})
+
+  form @submit.prevent = "getMoviesByQuery()"
+
+  return editable, write getMoviesByQuery()
+
+  to access inside ref editable.value - pass to service
+
+  col on v-for to add column flexibility across pages
+
+  onMounted lifecycle hook
+      onMounted(()=> clearMovies) => review this - clear appstate when we land on new page
+
+Add page nav on search page
+    - page nav buttons set up on home page -> abstract to their own component
+      - put button html into new component template
+
+      bring over script and paste in new component
+
+      inject page nav component into homePage and searchPage
+
+  - saved query into appstate - query=null
+  - pageNav - conditional using query
+
+  <!-- NOTE HE'S LOSING US, REVIEW BELOW -->
+    - service/homepage = getMoviesByQueryWithPageNumber
+    - clear movies
