@@ -323,7 +323,7 @@ Add page nav on search page
     - clear movies
 
 <!-- SECTION -->
-### WEDNESDAY GREGSLIST
+## WEDNESDAY GREGSLIST
 
 <!-- NOTE Sam's Monday fireside has reference to checkpoint requirement -->
 
@@ -408,8 +408,68 @@ onMounted(()=> {
   setFormDefault()
 })
 
+<!-- SECTION -->
+#### Hide Button
+   in carsPage
+    - pull account in from appstate w/ computed
+    -on button v-if="account.id"
+
+  - If no account it will drill into undefined, if account will drill into id
+
+<!-- NOTE Empty objects are truthy in Javascript -->
+
+<!-- SECTION -->
+#### Delete
+  - create delete button on car card
+  - @click= "removeCar()"
+  - write method
+      > const carId = props.carProps.id
+      pass props in setup to access props in methods below
+
+--- can pass carProp.id in function OR can pass props through setup to access in return
+
+  - pass to service with the carId
+  - find index and splice from appstate
+
+<!-- SECTION -->
+##### Refactoring
+   - abstract form to new component -> carForm.vue
+   - move form html, script [engineTypes, editable, createCar method]
+   - import whatever we need [service, ref, pop, ect]
+   - put carform component into carform modal
+
+  - create ModalComponent -> vt
+  - <slot></slot> review these - inject components wherever theres a slot tag
+
+<!-- SECTION -->
+#### EDIT
+
+  - want to open modal and populate form with car data
+  - @click ="setCarToEdit()"
+  - write method and pass to service
+  - create place in appstate to store active car
+  - use watchEffect to populate form when edit button is clicked
+  - break ref in watchEffect (see below)
+  - new function => handleSubmit() => called on button press
+  - write method -> check if we are creating a car or editing a car
+  - write editCar() method 
+  - create new car object, find index and splice edited car to appstate
+  - review @click to clear form
+  
+  when reactive property inside watch effect changes, run code
+
+  watchEffect(()=> {
+    if(Appstate.activeCar){
+      const brokeRefCar = {...Appstate.activecar}
+      editable.value = brokenRefCar
+    }
+  })
 
 
+
+<!-- NOTE EDITABLE.VALUE = {} AND setDefaults() AND Modal.getOrCreateInstance('modal id').hide()-->
+
+<!-- NOTE HAVE TO BRING IN PROPERTIES YOU WANT ON EACH COMPONENT -->
 
 <!-- NOTE CTRL+D to multicursor -->
 
