@@ -321,3 +321,95 @@ Add page nav on search page
   <!-- NOTE HE'S LOSING US, REVIEW BELOW -->
     - service/homepage = getMoviesByQueryWithPageNumber
     - clear movies
+
+<!-- SECTION -->
+### WEDNESDAY GREGSLIST
+
+<!-- NOTE Sam's Monday fireside has reference to checkpoint requirement -->
+
+ - fill out env.js
+ - set up page navigation in router
+ - create carsPage.vue
+ - navbar make button for cars
+ - carspage on mounted get cars // declare and write get cars, invoke in onMounted
+ - create and pass getCars to service
+ - await api, log res.data
+    > have car data in console
+ - make car model
+ - create place in appstate to store data
+ - map data in service
+ - store in appstate
+    > on page can use vue tools to see objects appstate
+ - bring in appstate to carspage 
+    > return cars: computed(()=>appstate.cars)
+ - data dump cars to page {{}}
+ - render col for each in appstate
+    > v-for:
+
+<!-- SECTION -->
+#### Components and Props
+
+  - create car card and vt
+    >h1 that says car card to show it works
+  - <CarCard /> - write component in carpage
+
+#####  Props
+    1. car card - above setup 
+      
+      props:{
+        carProp: {type: Car}
+      },
+
+    2. template in car card
+      {{carProp.make}}
+
+    3. carsPage
+        <CarCard :carProp='car' /> - inside loop so only pass on object each iteration
+
+    4. Move template into car card -> only knows what carProp is -> change variables to carProp.make ect
+
+<!-- NOTE props working and carCard injecting data into carpage -->
+
+- build out and style template
+- add button for create listing
+
+#### Car Form Model Component
+ - create component and import into cars page
+ - hook up modal to button
+    >@submit.prevent on form to prevent page reload
+ - create form
+
+ - carform -> inside return
+    -engineTypes: [] - copied from api
+
+- this will populate our dropdown with our enum engine types
+    <option v-for='engineType in engineTypes' :key="engineType" value="1" >
+    {{engineType}}
+    <option>
+
+- this will put the index number on the draw
+    <option v-for='(engineType, index) in engineTypes' :key="engineType + index" value="1" >
+
+ - create car in return of car form
+
+ - in setup -> const editable = ref({})
+ - must return editable to access it's value - not returned so it was undefined
+ - v-model="editable.make" on make input field - v-model on wherever the value will be stored
+
+
+<!-- NOTE SET DEFAULTS ON EDITABLES -->
+const editable = ref({})
+function setFormDefaults(){
+  editable.value.engineType = 'unknown'
+  editable.value.color = #0000000
+}
+
+onMounted(()=> {
+  setFormDefault()
+})
+
+
+
+
+<!-- NOTE CTRL+D to multicursor -->
+
