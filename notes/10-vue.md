@@ -487,4 +487,37 @@ onMounted(()=> {
   - profiles page => write method getProfiles(profileId) => create and pass to ProfilesService
   - get profile on mounted
   - write method in service
-  - create model and save in appstate
+  - create profile model and save profile data in appstate
+  - 
+<!-- NOTE chain v-if and v-else to change what html is drawn to page -->
+    -- v-if="profile" -> loads html for profile page when profile in appstate
+    -- v-else -> if no profile in appstate will load html under 'v-else'
+
+  - compute and bind image to style it
+    > coverImg: computed(()=> `url(${appstate.activeProfile.coverImg}))
+    > in css -> backgroundImg: v-bind()
+
+##### Project Card
+  - create reusable component for projects to use on profile page
+  - move html template to project card
+  - import component into home page
+  - create props
+    > set up in home page and ProjectCard component
+  - move applicable styling to projectcard
+  
+  - method to get profile projects
+
+<!-- NOTE use urls in browser to find crud paths -->
+
+<!-- NOTE If we will have multiple parameters for query -->
+
+  - const res = await api.get('api/projects', {
+    params: {
+      creatorId: profileId,
+      otherProperty: this
+    }
+  })
+
+  <!-- NOTE WILL NOT FORMAT FALSEY VALUES IN QUERY -->
+
+  - bring in projectCard component into profile page
