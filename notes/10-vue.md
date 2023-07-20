@@ -497,6 +497,7 @@ onMounted(()=> {
     > coverImg: computed(()=> `url(${appstate.activeProfile.coverImg}))
     > in css -> backgroundImg: v-bind()
 
+<!-- SECTION -->
 ##### Project Card
   - create reusable component for projects to use on profile page
   - move html template to project card
@@ -521,3 +522,36 @@ onMounted(()=> {
   <!-- NOTE WILL NOT FORMAT FALSEY VALUES IN QUERY -->
 
   - bring in projectCard component into profile page
+
+<!-- SECTION -->
+##### Show Images Inside Project
+
+  - set up place to store activve project in appstate
+  - pass props through setup and pass props.project through function to service
+  - compute active project
+  - inject active project into html -> use ? or v-if
+  
+  - v-for="img in activeProject.projectImg" :key="img"
+
+MOVED MODAL TO APP.VUE and COMPUTE ACTIVEPROJECTS AND APPSTATE -> accessible from anywhere on the page
+
+<!-- SECTION -->
+##### GO TO PROFILE PAGE AND UPDATE INFORMATION
+
+  - button routing to profile page, use v-if and account.id to supply id for path
+  - account page -> form in manage account button -> create form 
+  - @submit on button to editProfile
+  - pass to service and write method
+
+    > need to pass form data
+     > under setup - const editable=ref({})
+      > return editable
+      > v-model="editable.name"
+
+  - add properties we're missing to account model
+
+<!-- SECTION -->
+##### PrePopulate Form 
+  - watchEffect
+    - break ref with spread operator {...}
+    - editable.value = {...Appstate.account}
