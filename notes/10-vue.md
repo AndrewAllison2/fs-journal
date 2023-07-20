@@ -465,11 +465,26 @@ onMounted(()=> {
     }
   })
 
-
-
 <!-- NOTE EDITABLE.VALUE = {} AND setDefaults() AND Modal.getOrCreateInstance('modal id').hide()-->
 
 <!-- NOTE HAVE TO BRING IN PROPERTIES YOU WANT ON EACH COMPONENT -->
 
 <!-- NOTE CTRL+D to multicursor -->
 
+## THURSDAY LECTURE
+
+<!-- SECTION -->
+  #### Profile Page
+  - create profile page
+  - create route to profile page in router
+    > appened profileId to the url in router
+  - wrap profile img in router link
+    > bind a :to="{name: 'Profile', params: {profileId: project.creatorId}}"
+<!-- NOTE     name matches name in router, params object must match router loadPage -->
+
+  - under setup -> const route = useRoute() ==> important step to save params so we can use them
+  - in getProfile method -> const profileId = route.params.profileId -> gets profileId so we can pass to service
+  - profiles page => write method getProfiles(profileId) => create and pass to ProfilesService
+  - get profile on mounted
+  - write method in service
+  - create model and save in appstate
