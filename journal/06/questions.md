@@ -22,15 +22,15 @@
 
 06. Which component in Vue does the vue-router use to mount pages onto?
 
-  > | ANSWER HERE |
+  > App.vue file
 
 07. What is the difference between the `AppState` and the state object within a component?
 
-  > | ANSWER HERE |
+  > The AppState is global while the state object exists only within its component.
 
 08. What is the responsibility of `Services` in our Vue projects?
 
-  > | ANSWER HERE |
+  > Same as in mvc. They talk to apis and manipulate data in the appstate.
 
 09. What are ***props*** and how are they used? Provide an example
 
