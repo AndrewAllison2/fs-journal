@@ -555,3 +555,44 @@ MOVED MODAL TO APP.VUE and COMPUTE ACTIVEPROJECTS AND APPSTATE -> accessible fro
   - watchEffect
     - break ref with spread operator {...}
     - editable.value = {...Appstate.account}
+
+
+
+# Full Stack Lecture
+<!-- SECTION  -->
+  ### Backend Start
+  - initalize repo and commit before opening workspace
+  - fill out .env and env.js
+
+<!-- NOTE will need 2 auth tokens -> 1 from login on page and one from incognito page login -->
+
+  - set up postman test and get auth tokens
+
+<!-- NOTE code must be written and run in the order the postman tests are written -->
+
+<!-- SECTION -->
+  #### Start Coding
+  - use uml to create schema
+
+  creatorId: {ref: 'Account'}
+
+  - register schema in db context
+  - create controller and service folders, set up
+  - write function and test in postman
+
+
+<!-- SECTION -->
+##### CREATE TEST needs virtuals
+
+AlbumSchema.virtual('creator', {
+  localField:
+  foreignFeild:
+  justOne:
+  ref: 'Account'
+})
+
+.populate('creator', 'name picture')
+
+<!-- NOTE wrap entire await dbContext in parens to populate on the same line -->
+
+must await populate on create
