@@ -596,3 +596,13 @@ AlbumSchema.virtual('creator', {
 <!-- NOTE wrap entire await dbContext in parens to populate on the same line -->
 
 must await populate on create
+
+<!-- SECTION -->
+##### Archived Request
+  - soft delete because we are flipping a boolean
+
+  - find the album by id and userId
+  - alnumToDelte.archived = true
+  - await albumToArchive.save()
+
+  - logic will be built in around the status of this boolean
