@@ -606,3 +606,52 @@ must await populate on create
   - await albumToArchive.save()
 
   - logic will be built in around the status of this boolean
+
+<!-- SECTION -->
+##### Get Random Color
+ - function get random color
+    const colors =['put bootstrap colors in here']
+    const randomIndex = math.floor(math.random()* colors.length)
+
+    return colors[randomIndex]
+    :class="randomColor"
+
+<!-- SECTION -->
+##### Modal Stuff
+  put modal in component and bring component into the app.vue to access modal anywhere on app, btn has bs-toggle to open in the navbar
+
+  return category array, v-for category in categories :key='category' :value='category'
+
+Modal Body
+<slot name="header"></slot>
+<slot name="body"></slot>
+
+<ModalComponent>
+  <template>
+  <header >
+  
+  </header>
+  </template>
+</ModalComponent>
+
+<!-- REVIEW -->
+  const router = useRouter()
+
+  router.push({name: 'Album', params: {albumId: album.id}})
+
+  - return the new object we created from the service to access
+
+
+<!-- SECTION -->
+##### Archive Album
+  - v-if="route.name == 'Album'" -> conditionally render button on album details page with the route (our url path stored on the router)
+
+  - && add more conditions to v-if
+
+  - use watch effect on route
+
+  watchEffect(()=> {
+    getAlbumById(route.params.albumId)
+  })
+
+  watches reactive and updates page when the route parameters change - take to new album page when creating album
