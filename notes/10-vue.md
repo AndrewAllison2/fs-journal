@@ -724,5 +724,5 @@ albums: computed(()=> {
     }
 })
 
-<!-- REVIEW Picture Element -->
+<!-- REVIEW Picture Element and flat Object model-->
 
