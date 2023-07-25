@@ -668,3 +668,32 @@ Modal Body
 
   - v-for= "n in 10" -> creates dummy loop of data (rendered 10 pics despite only 1 in Appstate)
 
+<!-- REVIEW SLOTS in App.vue and ModalComponent -->
+
+- seperate <ModalComponent> for each instance of parent
+- slot component we want to inject into each modal instance 
+- remove id from modalComponent.vue -> no hardcoded id on modal
+- reuse modal component - give unique ids to each modal component in app.vue
+- data-bs-target = id on modal component 
+
+requests that require id - route.params store that id
+gives access to the current path
+
+Member Count
+local - _id 
+ref - Collaborators
+foreign - AlbumId
+count: true
+
+<!-- SECTION -->
+##### Nested Populate
+  - .populate({
+      path: 'album', {
+        populate: {
+          'path: creator, memberCount'
+        }
+      }
+    
+  })
+
+  - populating album we are referencing so once we have access to the virtuals on the album, can them populate them
