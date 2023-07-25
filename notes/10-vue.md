@@ -655,3 +655,16 @@ Modal Body
   })
 
   watches reactive and updates page when the route parameters change - take to new album page when creating album
+
+
+# Tuesday Lecutre
+
+<!-- SECTION -->
+##### Get Pictures by Album ID
+  - in router on Albums path
+      - beforeEnter: authSettled -> try to validate user before loading the page
+
+  - this.creator = new Account(data.creator)
+
+  - v-for= "n in 10" -> creates dummy loop of data (rendered 10 pics despite only 1 in Appstate)
+

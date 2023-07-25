@@ -14,7 +14,7 @@
 
 4. What does the `onMounted` method in Vue do?
 
-  > | ANSWER HERE |
+  > Runs code whenever the page or component is loaded
 
 5. What is the `v-model` attribute in Vue for, and when might you use it?
 
@@ -26,7 +26,7 @@
 
 7. Which Vue attributes(directives) could you use to conditionally render elements on a page?
 
-  > | ANSWER HERE |
+  > v-if and v-for
 
 8. What is the purpose of the `key` attribute when using `v-for` on an element?
 
