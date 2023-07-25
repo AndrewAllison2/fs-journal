@@ -697,3 +697,32 @@ count: true
   })
 
   - populating album we are referencing so once we have access to the virtuals on the album, can them populate them
+
+<!-- SECTION -->
+##### Many to Many Front End
+  isCollabortor: (()=> {
+    return Appstate.albumCollabs.find(c => c.accountId == Appstate.account.id)
+  })
+
+  will return an object(user accountId) or undefinded | truthy falsey values, we can use this to check if we are a collab on album and conditionally display button
+
+<!-- SECTION -->
+##### Get My Albums
+
+  AuthService -> dont forget try/catch in collabService
+    - await collabService.getMyCollabAlbums
+    - const res = await api.get('account/collaborators')
+
+<!-- SECTION -->
+#### Filter
+filterBy = ref('') @click= "filterBy = 'cats'"
+albums: computed(()=> {
+    if(filterBy.value = ""){
+      return Appstate.albums
+    } else{
+      return Appstate.albums.filter(a=>a.catergory == filterBy.value)
+    }
+})
+
+<!-- REVIEW Picture Element -->
+
