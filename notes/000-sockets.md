@@ -77,3 +77,14 @@ socket.io
 serverside events -> push notifications
 
 
+<!-- SECTION -->
+### Socket Lecture Pt. 2
+
+regionHandler.EnterRegion
+
+enter region onMounted
+leave region onBeforeRouteLeave
+
+add or skip -> finds message by id, pushes it if no found message
+
+
