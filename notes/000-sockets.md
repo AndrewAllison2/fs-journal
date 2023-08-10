@@ -88,3 +88,74 @@ leave region onBeforeRouteLeave
 add or skip -> finds message by id, pushes it if no found message
 
 
+<!-- SECTION -->
+### VUE TOUR
+
+Getting Started
+ - npm-i vue3-tour in the client folder
+ - import vue3-Tour in entrypoint of app (main.js)
+ - import vue3-Tour style sheet
+ - root -> .use(vue3-Tour) 
+
+ <!-- NOTE .use must be above the mount -->
+
+
+  - use class/id to target elements in the dom
+  - insert vue-tour tag
+  - under export -> name ='my-tour'
+  - under return -> array of steps: [
+      target: '#v-step-0',
+      header: {
+        title: 'Welcome to the tour'
+      },
+      content: `discover <strong>Vue Tour</strong>!`
+  ]
+
+  - after setup -> mounted: function(){
+    this.$tours['myTour'].start()
+  }
+
+
+use a component to use tour across multiple pages
+
+tour component
+<v-tour name="myTour" :steps="steps" :callbacks="tourCallbacks"></v-tour> -> put tag in component
+move mounted fuction
+pass steps prop to component and call component on home page
+
+- create next steps on new page -> does not matter if numerial across app -> read by numbers per page
+
+target elements with class selectors
+
+array of steps: [
+      target: '#v-step-0',
+      header: {
+        title: 'Welcome to the tour'
+      },
+      content: `discover <strong>Vue Tour</strong>!`,
+      params: {
+        placement: 'top',
+
+      }
+  ]
+
+  tourCallbacks -> calls function to router.push to new page
+
+  tourCallbacks: {
+    onFinish(()=> {
+      router.push(normal router push format here)
+    })
+  }
+
+
+Only See Tour Once
+account model in server
+
+add needsTour property
+write put request on account controller to edit account -> updateAccount built into template service
+added needsTour to sanitize body function -> allows needs tour to be an editable account property
+
+onSkip(()=> {accountService.editAccount({needsTour: false})})
+
+v-if ="account.needsTour" -> put on every place component is imported
+
