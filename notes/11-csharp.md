@@ -133,4 +133,155 @@ for(int i = 0; i > numbers.Length; i++)
   }
 
 ##### Cats Controller
-<!-- NOTE use new to create new controller -->
+
+<!-- NOTE use right click new to create new controller -->
+
+
+public class CatsController : ControllerBase
+{
+  <!-- this will apply to the FIRST method underneath it -->
+  [HttpGet]
+
+  public string Test()
+  {
+
+    return "Test worked";
+  }
+}
+
+#### Get Cats
+
+public class CatsController : ControllerBase
+{
+  private readonly CatsService _catsService;
+
+  public CatsController(CatsService catsService)
+  {
+    _catsService = catsService;
+  }
+
+  [HttpGet]
+
+  <!-- NOTE ActionResult allows us to return http responses like Ok and BadRequest -->
+  <!-- NOTE right click generate constructor to build above out -->
+
+  public ActionResult<List<Cat>> GetCats()
+  {
+    try
+    {
+      List<Cat> cats = _catsService.GetCats()
+      return Ok();
+    }
+    catch (Exception e)
+    {
+      return BadRequest(e.message);
+    }
+  }
+}
+
+<!-- SECTION -->
+#### SERVICE GETTIN' CATS
+
+public class CatsService
+{
+  private readonly CatsRepository _catsRepository;
+
+  public CatsService(CatsRepository catsRepository)
+  {
+    catsRepository
+  }
+
+  internal List<Cat> GetCats()
+  {
+    List<Cat> cats = _catsRepository.GetCats()
+  }
+
+
+}
+
+#### Cats Repository
+
+  - create CatsResposity
+
+public class CatsRespository
+{
+  private List<Cat> dbCats;
+
+  public CatsRepository()
+  {
+    dbCats = new List<Cat>();
+    dbCats.Add(new Cat("Gopher", 2, true, 4));   <--- creating fake database
+  }
+  internal List<Cat> GetCats()
+  {
+    return dbCats;
+  }
+
+}
+
+
+- build class
+- controller
+- service
+- repository
+- setup
+
+
+<!-- SECTION -->
+Unhandled exception error (dependancy)
+  - startup builds out all services/repos -> go to startup and have it build out services/repo
+
+  services.AddScoped<CatsRepository>();
+  services.AddScoped<CatsService>();
+
+
+#### Get Cat By Name
+ - in controller
+
+[HttpGet("{catName}")]
+
+public ActionResult<Cat> GetCatByName(string catName)
+{
+  try
+  {
+    Cat cat = _catsService.GetCatByName(string catName);
+    return Ok(cat)
+  }
+  catch(Exception e)
+  {
+    return BadRequest(e.message)
+  }
+}
+
+pass this to service
+
+ - in repo
+
+ internal Cat GetCatByName(string catName)
+ {
+  Cat foundCat = dbCats.Find(cat => cat.Name == catName);
+  return foundCat;
+ }
+
+##### Returned Null - Business Logic
+
+in service
+
+if(cat == null)
+{
+  throw new Exception($"No cat with the name of {catName}")
+}
+
+##### Post Request
+[HttpPost]
+public ActionResult<Cat> CreateCat([FromBody] Cat catData)
+{
+  Cat cat = _catsService.CreateCat();
+  return Ok(cat);
+}
+
+
+today change repo in setup to AddSingleton
+
+[HttpDelete("{catName}")]
+public ActionResult<string> RemoveCat(string catName)
