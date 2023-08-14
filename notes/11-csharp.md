@@ -94,4 +94,43 @@ for(int i = 0; i > numbers.Length; i++)
 
     names.Remove("Stinky") -> remove first thing name "Stinky" from list
 
-    
+    Edabit C# challenges
+
+
+<!-- SECTION -->
+### C# APP
+
+  dotnet-auth
+
+  program.cs is entry point to C# programs
+  namespace = acts like export in js/ using acts like import -> namespace and public allows other parts of app to use this code
+
+##### Models/Classes
+
+  - set up model/classes -> right click to have vs generate template based on what we are setting up -> Cat.cs
+
+<!-- NOTE PROP code snippet to generate code for schema -->
+
+  public class Cat
+  {
+    public string Name {get; set;}
+    public int Age {get; set;}
+    public bool HasTail {get; set;}
+    public double NumberOfLegs {get; set;}
+
+
+  <!-- constructor -->
+    public Cat(string name, int, age, bool hasTail, double numberOfLegs)
+
+  <!-- pass values through constructor and assign them to class -->
+    {
+      Name = name;
+      Age = age;
+      HasTail = hasTail;
+      NumberOfLegs = numberOfLegs;
+
+    }
+  }
+
+##### Cats Controller
+<!-- NOTE use new to create new controller -->
