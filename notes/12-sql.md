@@ -159,3 +159,67 @@ IN SERVICE LEVEL
   run Car car = GetCarById(carId)
 
 <!-- REVIEW CREATE CAR REQUEST BETWEEN SERVICE AND REPO -->
+
+<!-- SECTION -->
+#### DELETE REQUEST
+
+  - returning string to user so service and repo are void and are not expected to return anything
+
+  internal void RemoveCar(int carId)
+  {
+    string sql = "DELETE FROM cars WHERE id = @carId;"
+
+    _db.Execute(sql, new {carId})
+  }
+
+  set up error handling in service -> GetCarById and RemoveCar
+
+    if(car == null)
+    {
+      throw new Exception("")
+    }
+
+<!-- SECTION -->
+#### Put Request
+
+  - supply with params and a body
+
+  SERVICE
+  
+  internal Car UpdateCar(int carId, Car carData)
+  {
+    Car originalCar = GetCarById(carId);
+
+    originalCar.Make = carData.Make ?? originalCar.Make; -> null check
+
+    Car car = _carsRepository.UpdateCar(originalCar) -> original car is now storing our id
+    return car;
+  }
+
+  internal Car UpdateCar(Car originalCar)
+  {
+    string sql = @"
+      UPDATE cars
+      SET
+      make = @Make,
+      model = @Model,
+      color = @Color
+      WHERE id = @Id -> dapper looks through object and finds all the properties
+      LIMIT 1;
+      SELECT * FROM cars WHERE id = @Id
+      ;";
+
+      <!-- _db.Execute(sql, originalCar); -->
+      review repo for the return on an edit
+      return 
+  }
+
+
+put ? on model to allow it to be null -> see CAR model
+  - this sets prop to null on edits and sets value to null if not supplies so we can do a null check in service level of edit
+
+<!-- REVIEW -->
+  - QueryFirstOfDefault = give me one item back or null
+  - ExecuteScalar = return the first numerical value
+  - Execute = run sql and don't return anything
+  - Query = return an array of things
