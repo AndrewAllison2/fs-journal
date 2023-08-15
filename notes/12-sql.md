@@ -39,8 +39,10 @@ SELECT name, applesEaten FROM capybars -> return name and applesEaten
 
 SELECT * FROM capybaras -> retruns everything in capybaras
 
-SELECT * FROM capybaras WHERE id = 2;
+SELECT * FROM capybaras WHERE id = 2; -> returns entire row with the id of 2
 
 WHERE name LIKE %cappy% -> returns cappy and lil cappy -> all names that are like cappy
 
-DELETE FROM capybaras WHERE id = 2;
+DELETE FROM capybaras WHERE id = 2; -> deletes entire row where the id is 2
+
+
