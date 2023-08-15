@@ -9,7 +9,7 @@
 
 03. What is the method that returns an instance of a class, yet it has no return type?
 
-  > Void
+  > A constructor
 
 05. In the Car example what is the access modifier of the `Start()` method?
 
@@ -25,11 +25,11 @@
   }
   ```
 
-  > | ANSWER HERE |
+  > public
 
 06. In the Car example what is `string` an indication of?
 
-  > | ANSWER HERE |
+  > 
 
 07. In the Car example what is `abstract` preventing?
 
