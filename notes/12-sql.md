@@ -352,5 +352,16 @@ List<Album> albums = _db.Query<Album, Profile, Album>(
 
   - business logic/checks if album creator = creatorId
 
-  string sql = "UPDATE albums SET archived = true WHERE id = @albumId;";
+  __string sql = "UPDATE albums SET archived = true WHERE id = @albumId;";__
   _db.Execute(sql, new{albumId});
+
+## PICTURES
+
+  - create pictures table
+    - use foreign key constaints for albumId and creatorId (ref line 246)
+  - create class model for picutres
+  - set up controller/service/repo, add auth0 in constructor
+  - create pic -> get user info, add to picData
+
+- write GetPicById in service -> not needed in tests/client side write in service so we can use it in other methods
+
