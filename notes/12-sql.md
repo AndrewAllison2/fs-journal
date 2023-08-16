@@ -365,3 +365,14 @@ List<Album> albums = _db.Query<Album, Profile, Album>(
 
 - write GetPicById in service -> not needed in tests/client side write in service so we can use it in other methods
 
+#### GET PICTURES BY ALBUM ID
+  - method will go in albumsController -> based off url and endpoints
+
+  [HttpGet("{albumId}/pictures")]
+  public ActionResult<List<Picture>> 
+
+  - send to pictures service -> bring pic service in at album controller
+    - private readonly PicturesService _picturesService -> add params to constructor
+
+    - populate with creator
+
