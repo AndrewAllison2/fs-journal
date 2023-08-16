@@ -282,3 +282,75 @@ put ? on model to allow it to be null -> see CAR model
 <!-- SECTION ADD AUTH TO METHOD -->
 [Authorize]     only the post method now requires user to log in
 [HttpPost]
+
+<!-- SECTION POPULATE ALBUM CREATOR -->
+  - test in dbSetup
+
+  SELECT *
+  FROM albums
+  JOIN accounts ON accounts.id = albums.creatorId; -> only join tables where this condition is met
+  
+  SELECT
+  *
+  alb.*,
+  acc.*,
+  FROM albums alb
+  JOIN accounts acc
+  ON acc.id = alb.creatorId;
+
+<!-- NOTE MOVED TO GETS THEN COMING BACK TO POST -->
+
+<!-- REVIEW ALIAS OUT TABLES SO WE CAN MANIPULATE ORDER WHEN MAPPING -->
+
+STRING SQL = @"
+SELECT
+alb.*,
+acc.*
+FROM albums alb
+JOIN accounts acc ON acc.id = alb.creatorId
+;";
+
+
+<!-- REVIEW MAPPING TABLES -->
+
+  - sql as first argument, map as the second argument, then remaining args
+
+List<Album> albums = _db.Query<Album, Profile, Album>(sql).ToList();
+                                ^        ^        ^
+                              take in ablum/profile, return album
+
+
+List<Album> albums = _db.Query<Album, Profile, Album>(
+  sql,
+  (album, profile) => {
+    album.Creator = profile;
+    return album;
+  }
+  ).ToList();
+  return albums;
+
+- created profile class in account model
+- set up another property "Profile" on album model
+
+  - public Profile Creator {get; set;}
+- pass sql and mapping function as arguments
+- join tables
+- map data from tables
+- set profile object as creator on album
+- return to user
+
+<!-- NOTE THE ORDER YOUR DATA COMES BACK MATTERS -->
+
+ - GetById -> query first then call first or default
+
+- finish post test using GetById
+
+#### ARCHIVE (SOFT DELETE)
+
+  - return type is a task, public method is async
+  - will grab album id and user id and pass down to service
+
+  - business logic/checks if album creator = creatorId
+
+  string sql = "UPDATE albums SET archived = true WHERE id = @albumId;";
+  _db.Execute(sql, new{albumId});
