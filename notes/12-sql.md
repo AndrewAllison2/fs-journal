@@ -222,4 +222,63 @@ put ? on model to allow it to be null -> see CAR model
   - QueryFirstOfDefault = give me one item back or null
   - ExecuteScalar = return the first numerical value
   - Execute = run sql and don't return anything
-  - Query = return an array of things
+  - Query = returnn an array of things
+
+
+## WEDNESDAY LECTURE
+
+### SQL AND C# WITH AUTH
+
+  - fill out appsetting in backend and env.js in client
+  - change base url to 'https://localhost:7045'
+
+  - execute create account table
+
+  - create album table in dbSetup
+
+<!-- NOTE ENUM IN SQL DATABASE -->
+  category ENUM ('misc', 'cats', 'dogs', 'games') DEFAULT 'misc',
+
+<!-- NOTE CREATOR ID IN SQL -->
+  creatorId VARCHAR(255) NOT NULL -> data type should match whatever it's referencing
+
+#### FOREIGN KEY
+  FOREIGN KEY(creatorId) REFERENCES accounts(id) ON DELETE CASCADE -> when account is deleted, it will delete all data they made
+
+  - account id must match something in the SQL account table
+
+#### GETTING STARTED
+  - create model/controller/service/repo
+
+    - enum written as string in model
+    - creatorId is string datatype
+
+  @ when passing dapper an object --- DO NOT STRING INTERPOLATE
+
+  - albumData.Id = albumId -> dont have a find by id method yet
+
+ <!-- SECTION PULL USERS INFO FROM REQUEST BODY -->
+
+    - example in account controller
+
+    Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+
+  - create another dependency in albums controller
+    - private readonly Auth0Provider _auth0Provider
+
+    - ctrl + . "add params to constructor"
+
+  - IN POST REQUEST IN ALBUMCONTROLLER
+      Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+
+<!-- NOTE WHENEVER WE GET USER INFO THE METHOD MUST BE ASYNC AND WE AWAIT RESULTS -->
+
+  public async Task<ActionResult<Album>> Create Album([FromBody] Album albumData)
+
+  albumData.CreatorId = userInfo.Id; -> ALBUMCONTROLLER
+
+<!-- NOTE HttpContext is like req and res in NODE -->
+
+<!-- SECTION ADD AUTH TO METHOD -->
+[Authorize]     only the post method now requires user to log in
+[HttpPost]
