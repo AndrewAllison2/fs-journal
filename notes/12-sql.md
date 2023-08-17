@@ -376,3 +376,29 @@ List<Album> albums = _db.Query<Album, Profile, Album>(
 
     - populate with creator
 
+# THURSDAY LECTURE
+
+  - id should be first property on each table
+
+  - set up model/controller/service/repo
+
+
+##### FLAT OBJECT (NO NESTED OBJECTS)
+
+  - create passes so collab is wroking, get wants flat object with different props
+
+  - COLLABMODEL -> create ProfileCollaborator Model -> give it collaborationId property
+  
+<!-- NOTE use inheritence to bring in members from another class -->
+
+public class ProfileCollaboration : Profile
+
+  - changed data type returned to profilecollabs
+
+  SELECT
+  collab.*
+  acc.*
+  FROM collaborators collab
+  JOIN accounts acc ON collab.accountId = acc.Id
+  WHERE collab.albumId = @albumId
+
