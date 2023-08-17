@@ -402,3 +402,60 @@ public class ProfileCollaboration : Profile
   JOIN accounts acc ON collab.accountId = acc.Id
   WHERE collab.albumId = @albumId
 
+
+#### Get ALBUMS I'M A COLLAB ON
+
+   public class AlbumCollaboration : Album
+   {
+    public int collaborationId {get; set;}
+   }
+
+   - write method in account controller
+
+   [Authorize]
+   [HttpGet]
+   public async Task<List<AlbumCollaboration>>> GetMyAlbumCollabs()
+
+
+  - bring in and pass to collab service
+
+
+#### DOUBLE JOIN
+
+<!-- REVIEW DOUBLE JOIN REFERENCE HERE AND POST-IT -->
+
+  COLLAB REPO
+
+    string sql = @"
+    SELECT
+    collab.*,
+    alb.*
+    FROM collaborators collab
+    JOIN albums alb ON alb.id = collab.albumId
+    WHERE collab.accountId = @userId
+    ;";
+
+    (
+    sql,
+    (collaborator, album)=>{
+      album.collaborationId = collaborator.Id;
+      return album;
+    }
+    new {userId}
+    ).ToList()
+
+  - creator came back null 
+
+      string sql = @"
+    SELECT
+    collab.*,
+    alb.*,
+    acc.*
+    FROM collaborators collab
+    JOIN albums alb ON alb.id = collab.albumId
+    JOIN accounts acc ON acc.id = alb.creatorId
+    WHERE collab.accountId = @userId
+    ;";
+
+    - bring in account data type in query -> brought in profile
+
