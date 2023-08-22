@@ -25,3 +25,12 @@ dbsetup - unique (cultId, accountId)
   public class CultMember : RepoItem<int>
 
   > get cult to compare leaderId to userId
+
+
+<!-- NOTE REFERENCE CULTIST FOR SHOWING ALL MEMBERS OF A CULT -->
+
+
+<!-- NOTE cultMembersRepo getCult SQL REFERENCE FOR MEMBER COUNT AND LEFTJOIN-->
+
+- LEFTJOIN used to join tables even if there is no data => join returned only cults that had members
+- GROUP BY 
