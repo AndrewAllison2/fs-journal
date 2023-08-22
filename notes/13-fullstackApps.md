@@ -34,3 +34,5 @@ dbsetup - unique (cultId, accountId)
 
 - LEFTJOIN used to join tables even if there is no data => join returned only cults that had members
 - GROUP BY 
+
+const cultData = {cultId: cultId} or {cultId}
