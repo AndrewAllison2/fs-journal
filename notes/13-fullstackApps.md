@@ -39,13 +39,33 @@ const cultData = {cultId: cultId} or {cultId}
 
 # WEDNESDAY
 
-  - Only see shut down rest if i am creator
+<!-- SECTION -->
+  - Only see shut down rest with getbyid if i am creator of rest
 
 <!-- NOTE REFERENCE HELP_REVIEWS -> GETBYID -->
 
- - can pull out user info without authorizing the method
+ - can pull out user info without authorizing the method -> controller
 
-> string userId = null -> is it has value it will keep that, if not will assign to null
+> string userId = null -> if it has value passed from controller it will keep that, if not will assign to null
 
-OBJECT REF NOT SET TO INSTANCE OF OBJ ERROR -> trying to drill into null (ex: userInfo.id) -> use elvis operator
+<!-- REVIEW -->
+ - OBJECT REF NOT SET TO INSTANCE OF OBJ ERROR -> trying to drill into null (ex: userInfo.id) -> use elvis operator
 
+- this broke edit ^ because we call get by ID without passing it a user id(null => getbyId will fail test)
+
+refactor service -> pass userId to any call to getById
+
+- GET ALL ONLY RETURNS REST NOT SHUT DOWN
+  - get userInfo from controller
+
+  - SERVICE
+    - List<T>FindAll
+
+    restaurants = restaurants.FindAll(r => r.IsShutDown == false || r.CreatorId == userId) -> find us all restaurants that are not shut down OR that i'm a creator of
+
+### EDIT ACCOUNT 
+  reference help review account controller
+
+## FRONT END
+
+  
