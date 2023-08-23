@@ -36,3 +36,16 @@ dbsetup - unique (cultId, accountId)
 - GROUP BY 
 
 const cultData = {cultId: cultId} or {cultId}
+
+# WEDNESDAY
+
+  - Only see shut down rest if i am creator
+
+<!-- NOTE REFERENCE HELP_REVIEWS -> GETBYID -->
+
+ - can pull out user info without authorizing the method
+
+> string userId = null -> is it has value it will keep that, if not will assign to null
+
+OBJECT REF NOT SET TO INSTANCE OF OBJ ERROR -> trying to drill into null (ex: userInfo.id) -> use elvis operator
+
