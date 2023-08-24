@@ -75,5 +75,10 @@ refactor service -> pass userId to any call to getById
     Push to home page on badrequest
       - router.push()  => in catch of function
 
+  ## BACKEND AGAIN
   
+  PAGE VISITS
+    - service - utility function
+
+
 
