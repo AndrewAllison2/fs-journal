@@ -68,4 +68,12 @@ refactor service -> pass userId to any call to getById
 
 ## FRONT END
 
+  home page router -> beforeEnter:authSettled -> wait for bearer token, attach to request and send -> get my restaurants wether opened or closed
+
+  - ROUTER PUSH CONDITIONAL
+
+    Push to home page on badrequest
+      - router.push()  => in catch of function
+
   
+
