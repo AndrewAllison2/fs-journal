@@ -75,10 +75,19 @@ refactor service -> pass userId to any call to getById
     Push to home page on badrequest
       - router.push()  => in catch of function
 
-  ## BACKEND AGAIN
+## BACKEND AGAIN
   
   PAGE VISITS
     - service - utility function
+
+  - SORT RESTAURANTS
+     - sql -> order by => review docs/sqlBolt/mySqlTutorial
+
+  - Query
+    - GetRestaurants([FromQuery] string name) ==> controller -> get can take in query, service -> call diferent methods in repo based on query check in service
+
+    name = $"%{name}%"
+
 
 
 
