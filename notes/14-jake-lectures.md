@@ -33,4 +33,6 @@
    - spin up machine
    - connect with ssh
 
-   
+  ## NODE INSTALL
+   pm2 or nodemon
+   enginex
