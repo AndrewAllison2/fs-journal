@@ -37,8 +37,8 @@
    pm2 or nodemon
    
 
-  ## Github Actions and Nginx
-    ctrl+r in cm to cycle through commands, ctrl+c or exit to get out
+  ## Nginx
+    ctrl+r in cm to cycle through commands, ctrl+c or exit to get out, ctrl+, to open workspace settings
     - connect to ec2 instance through cmd ssh
     - Nginx as proxy
 
@@ -56,11 +56,27 @@
           copy/paste readme
         }
       }
+
+      npi i -g pnpm
+      pnpm install
+      pnpm install -P -> don't install dev dependencies
     
 
     - can put multiple apis in one box and host them on different ports (post-it on port 3000, gregslist on 3001)
 
-    
+    - setup.js in node servers
+      - const routeprefix = process.env.ROUTE_PREFIX
+    - startup.js server
+
+  ## Github Actions
+    - .github/workflows/deploy.yml
+    - yml is white space and syntax sensitive
+
+
+  - settings -> secrets -> add new
+    > name = unbuntu
+    > ip address => public ec2 ip
+    > pem key = copy paste downloaded file -> must exactly match saved file
 
 <!-- NOTE 502 bad gateway means nginx sent traffic to localhost but got no response-->
 
