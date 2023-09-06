@@ -35,4 +35,34 @@
 
   ## NODE INSTALL
    pm2 or nodemon
-   enginex
+   
+
+  ## Github Actions and Nginx
+    ctrl+r in cm to cycle through commands, ctrl+c or exit to get out
+    - connect to ec2 instance through cmd ssh
+    - Nginx as proxy
+
+    - sudo apt update
+    - sudo apt install nginx
+
+    - modify config in nginx -> default
+
+      server{
+        listen 80;
+        listen [::]:80;
+        server_name [IP Address];
+
+        location / {
+          copy/paste readme
+        }
+      }
+    
+
+    - can put multiple apis in one box and host them on different ports (post-it on port 3000, gregslist on 3001)
+
+    
+
+<!-- NOTE 502 bad gateway means nginx sent traffic to localhost but got no response-->
+
+
+<!-- NOTE theme forest for landing page inspiration-->
