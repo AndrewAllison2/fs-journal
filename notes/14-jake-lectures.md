@@ -135,3 +135,18 @@
 
 
 GET DOMAIN FOR LANDING PAGE (NameCodes.dev) and then can route each hosted project across that page securely
+
+# Docker
+  - research dev ops and kubernetes
+
+  - install docker on ec2 instance -> sudo snap install docker
+  - sudo docker ps
+
+  -sudo docker run -d --restart unless stopped -p 80:3000 {{docker-container}}
+
+  - read how to set up docker and a docker container
+
+  <!-- NOTE DOCKER INFO @ digitalocean/ the docker ecosystem
+  working with the docker container -->
+
+  - use Jake's config over tutorials configs
