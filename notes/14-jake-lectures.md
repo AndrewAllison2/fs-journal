@@ -82,3 +82,50 @@
 
 
 <!-- NOTE theme forest for landing page inspiration-->
+
+
+# Thursday
+
+  ## SSL Certs
+   - letsencrypt.org -> free cert
+
+    - public/private key pairs
+    - jwt.io
+
+  ### Getting A Cert
+    - certbot -> guided walkthrough of getting/installing cert
+
+    - install snapd
+
+    - snap is package manager similar to apt
+    - install certbot
+
+    - running certbox nginx
+      > server name must be valid domain name
+      > domain names -> ex: devsanddragons.com
+
+  <!-- NOTE cloudflare to manage DNS over google and buy domain -->
+    
+    DNS
+      - add record
+      - type A
+      - name points to subdomain
+      
+      [Type: A, Name: @, IP Address] -> can say dont use proxy / DNS only
+
+      - SSL on cloudflare -> overview -> Full (strict)
+
+  #### SET UP CERT W/ CLOUDFLARE
+    - origin server
+      - create cert -> RSA 2048, 15 years -> create
+
+      - gives origin cert and private key -> put on EC2 box
+      - change nginx config
+        > set up to listen on port 443 -> top section of NGINX in readme
+        > update server name with the domain name
+        > change 2nd server to be port 443, server name to domain name
+        > sudo nano into locations and paste the cert and key (key.pem/cert.pem)
+
+    - sudo systemctl restart nginx
+
+    - served over https at this point
