@@ -93,6 +93,9 @@
     - jwt.io
 
   ### Getting A Cert
+
+<!-- NOTE USED CLOUDFLARE TO OBTAIN CERT INSTEAD (SEE BELOW) -->
+
     - certbot -> guided walkthrough of getting/installing cert
 
     - install snapd
@@ -129,3 +132,6 @@
     - sudo systemctl restart nginx
 
     - served over https at this point
+
+
+GET DOMAIN FOR LANDING PAGE (NameCodes.dev) and then can route each hosted project across that page securely
