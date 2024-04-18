@@ -17,3 +17,22 @@
   print("Hello " + name)
 
   <!-- STUB string concatination ^^^^  -->
+
+# MANIPULATE DATA TYPES
+  birth_year = input("Enter your birth year: ")
+  age = 2024 - birth_year
+  print(age)
+
+  __(threw error => int vs string)__
+
+  USE INT FUNCTION!
+
+  birth_year = input("Enter your birth year: ")
+  age = 2024 - int(birth_year)
+  print(age)
+
+__VALUE CONVERSION FUNCTIONS__
+  - int() => convert value to int
+  - float() => convert value to floating point number(num w/ decimal point)
+  - bool() => convert value to bool
+  - str() => convert value to string
