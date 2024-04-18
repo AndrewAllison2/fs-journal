@@ -70,4 +70,17 @@ __VALUE CONVERSION FUNCTIONS__
     print('Python' in course) => output = true
 
 ### Math Operations
-  
+  print(10 + 3) = 13
+  print(10 - 3) = 7
+  print(10 * 3) = 30
+
+  print(10 / 3) => floating point number = 3.33333335
+  print(10 // 3) => integer = 3
+  print(10 % 3) => remainder of 10/3 = 1
+  print(10 ** 3) => exponent multiplier = 1000
+
+  Augmented Assignment Operator
+    x += 3
+    x *= 3
+
+<!-- NOTE Python follows standard Order of Operations when doing math -->
