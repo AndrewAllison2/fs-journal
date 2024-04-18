@@ -36,3 +36,26 @@ __VALUE CONVERSION FUNCTIONS__
   - float() => convert value to floating point number(num w/ decimal point)
   - bool() => convert value to bool
   - str() => convert value to string
+
+
+  _Ex_
+    First: 10.1
+    Second: 20
+    Sum: 30.1
+
+    first = input("First: ")
+    second = input("Second: ")
+    sum = float(first) + float(second)
+    print("Sum: " + sum) => error so
+    print("Sum: " + str(sum))
+
+
+    # NOTE Python doesnt know how to concatinate a float with a string 
+
+    first = float(input("First: "))
+    second = float(input("Second: "))
+    sum = first + second
+
+### Strings
+
+  course = 'Python for Beginners'
