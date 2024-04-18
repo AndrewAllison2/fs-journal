@@ -57,5 +57,17 @@ __VALUE CONVERSION FUNCTIONS__
     sum = first + second
 
 ### Strings
+  __Strings are immutable in Python__
 
   course = 'Python for Beginners'
+    .upper() => returns NEW string, does not overwrite variable
+    .lower() => returns NEW string, does not overwrite variable
+    .find() => see if string contains character/sequence of characters => __index of frist character is 0__
+    .replace() => change string content => .replace('for', '4') => output = Python 4 Beginners 
+    
+    _IN_ operator
+    course = 'Python for Beginners'
+    print('Python' in course) => output = true
+
+### Math Operations
+  
