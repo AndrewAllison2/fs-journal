@@ -84,3 +84,36 @@ __VALUE CONVERSION FUNCTIONS__
     x *= 3
 
 <!-- NOTE Python follows standard Order of Operations when doing math -->
+
+### Logical Operators
+__AND__
+  price = 25
+  print(price > 10 and price < 30)
+  output = True
+
+__OR__
+  price = 5
+  print(price > 10 or price < 30)
+  output = True (because price is less than 30)
+
+__NOT__
+  price = 5
+  print(not price > 10)
+  output = True (because price is not greater than 10)
+
+### If Statements
+  work similar to Javascript if
+  
+  __elif__ is shorthand for if else
+
+<!-- NOTE PYTHON USES INDENTATION FOR CODE BLOCKS INSTEAD OF {} -->
+
+_Ex_
+temp = 5
+if temp > 30:
+  print("It's a hot day!")
+elif temp > 20:
+  print("It's pretty nice out!")
+elif temp < 15:
+  print("Don't go outside!")
+
