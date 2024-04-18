@@ -117,3 +117,18 @@ elif temp > 20:
 elif temp < 15:
   print("Don't go outside!")
 
+### WHILE LOOPS
+  repeat code block multiple times
+
+i = 1
+  while i <= 5:
+    print(i)
+    i ++
+
+i = 1
+  while i <= 10:
+    print(i * '*')
+    i ++
+  output => * for 1 ** for 2 ect
+
+### Lists
