@@ -132,3 +132,56 @@ i = 1
   output => * for 1 ** for 2 ect
 
 ### Lists
+
+names = ["John", "Bob", "Sam", "Mary"]
+  print(names[0]) => return "John"
+
+can use negative indexes => -1 is last index on list
+
+names[0:3] => returns elemnts at index 0, 1, 2 => returns new list
+
+##### LIST METHODS
+  numbers = [1, 2, 3, 4, 5]
+
+  numbers.append(6) => [1, 2, 3, 4, 5, 6] (append new item to end of list)
+
+  numbers.insert(0, -1) => [-1, 1, 2, 3, 4, 5, 6] expects index then value
+
+  numbers.remove(3) => [1, 2, 4, 5]
+
+  numbers.clear() => empties array
+
+  print(1 in numbers) => True (1 exists in the array)
+
+  print(len(numbers)) = 5 (returns number of elements in the array)
+
+### FOR LOOPS
+  numbers = [1, 2, 3, 4, 5]
+  for item in numbers:
+    print(item)
+
+    i = 0
+    while i < len(numbers):
+      print(numbers[i])
+      i ++
+
+  <!-- STUB THESE DO THE SAME THING ^^^^^^^ -->
+
+### RANGE FUNCTION
+  numbers = range(5) => returns range object (object that can store a sequence of objects)
+    print(numbers) = range(0, 5)
+
+  numbers = range(5)
+  for number in numbers:
+    print(number)
+
+    if 2 values first value is starting point
+    3rd value is step => if we pass 2 we return odd numbers
+
+### TUPLES
+  used to store a sequence of objects but they are __IMMUTABLE__
+
+  numbers = (1, 2, 3) => parens for Tuple
+  only have .count() and .index()
+
+  used when data should not be changes of manipulated
