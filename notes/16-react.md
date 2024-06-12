@@ -1,6 +1,12 @@
 # REACT
 
 ## Imports/Setup
+
+__Getting Started__
+  npm create vite@latest _Project-Name_ -- --template react
+
+    - note that react can be changed for other frameworks like vue
+
   - rafc = React Arrow Function Component => this is good for scaffolding components
   - rafce = React Arrow Function Component Export
 
