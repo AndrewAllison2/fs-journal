@@ -35,3 +35,6 @@ __Getting Started__
     
 ## Style
   - create _COMP NAME_ .css in same place as component. Individual style sheets for components/pages
+
+## MAPPING DATA
+  {_array-name_.map((item) => (<Component data={item} key={item.id}/>))}
