@@ -1,7 +1,10 @@
 # REACT
 
-## Imports
-  __Routing__
+## Imports/Setup
+  - rafc = React Arrow Function Component => this is good for scaffolding components
+  - rafce = React Arrow Function Component Export
+
+## Routing
     - install react-router-dom in dependecies
     - import {BrowserRouter as Router, Routes, Route} from react-router-dom
     -set up router in App.jsx
@@ -24,3 +27,5 @@
       <Link to="/"> Home <Link/>
 
     
+## Style
+  - create _COMP NAME_ .css in same place as component. Individual style sheets for components/pages
