@@ -10,9 +10,17 @@
           <div>
             <Router>
               <Routes>
-                <Route path="/" />
-                <Route path="/cart" />
+                <Route path="/" element={ <Home /> }/>
+                <Route path="/cart" element={ <Cart /> }/>
               </Routes>
             </Router>
           </div>
         )
+
+  ##### components between Router and Routes persist across pages (ex: Navbar component)
+
+    - import Link component from react-router-dom for routes (see navbar comp in ecommshop)
+    ##### Links require a 'to' prop for routing
+      <Link to="/"> Home <Link/>
+
+    
