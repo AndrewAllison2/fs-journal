@@ -38,3 +38,7 @@ __Getting Started__
 
 ## MAPPING DATA
   {_array-name_.map((item) => (<Component data={item} key={item.id}/>))}
+
+
+# STATE MANAGEMENT
+  - use context to manage single state across multiple components (see ecommshop1 shopContext)
