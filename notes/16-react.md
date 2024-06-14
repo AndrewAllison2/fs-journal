@@ -52,4 +52,7 @@ __Getting Started__
 
 # CONDITIONAL RENDERING
 
+# NOTES
+ - 
+
 
