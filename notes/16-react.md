@@ -26,6 +26,12 @@ __Getting Started__
           </div>
         )
 
+###### Button/Link Routing To Pages
+  - import { useNavigate } from "react-router-dom";
+  - const navigate = useNavigate()
+  - onClick={() => navigate('/')}
+
+
   ##### components between Router and Routes persist across pages (ex: Navbar component)
 
     - import Link component from react-router-dom for routes (see navbar comp in ecommshop)
@@ -42,3 +48,8 @@ __Getting Started__
 
 # STATE MANAGEMENT
   - use context to manage single state across multiple components (see ecommshop1 shopContext)
+
+
+# CONDITIONAL RENDERING
+
+
